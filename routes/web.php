@@ -4,6 +4,7 @@ use App\Http\Controllers\detail_serviceController;
 use App\Http\Controllers\jenis_kendaraanController;
 use App\Http\Controllers\jenis_serviceController;
 use App\Http\Controllers\mekanikController;
+use App\Http\Controllers\pemilikController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,3 +50,10 @@ Route::post('/mekanik/add',[mekanikController::class,'store'])->name('mekanik.st
 Route::get('/mekanik/edit/{id}',[mekanikController::class,'edit'])->name('mekanik.edit');
 Route::post('/mekanik/edit/{id}',[mekanikController::class,'update'])->name('mekanik.update');
 Route::get('/mekanik/delete/{id}',[mekanikController::class,'destroy'])->name('mekanik.delete');
+
+Route::get('/pemilik',[pemilikController::class,'index'])->name('pemilik.index');
+Route::get('/pemilik/add',[pemilikController::class,'create'])->name('pemilik.create');
+Route::post('/pemilik/add',[pemilikController::class,'store'])->name('pemilik.store');
+Route::get('/pemilik/edit/{id}',[pemilikController::class,'edit'])->name('pemilik.edit');
+Route::post('/pemilik/edit/{id}',[pemilikController::class,'update'])->name('pemilik.update');
+Route::get('/pemilik/delete/{id}',[pemilikController::class,'destroy'])->name('pemilik.delete');

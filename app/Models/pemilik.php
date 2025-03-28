@@ -13,6 +13,7 @@ class pemilik extends Model
     protected $table = 'pemilik';
 
     protected $fillable =[
+        'id_pemilik',
         'nama_pemilik',
         'tgl_lahir',
         'alamat',

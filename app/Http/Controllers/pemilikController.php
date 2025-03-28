@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\pemilik;
 use Illuminate\Http\Request;
 
 class pemilikController extends Controller
@@ -11,7 +12,8 @@ class pemilikController extends Controller
      */
     public function index()
     {
-        //
+        $data = pemilik::get();
+        return view('pemilik.tampilPemilik',compact('data'));
     }
 
     /**
@@ -19,7 +21,7 @@ class pemilikController extends Controller
      */
     public function create()
     {
-        //
+        return view('pemilik.tambahPemilik');
     }
 
     /**
@@ -27,7 +29,14 @@ class pemilikController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new pemilik();
+        $data -> nama_pemilik = $request -> nama_pemilik;
+        $data -> tgl_lahir = $request ->tgl_lahir ;
+        $data -> alamat = $request -> alamat;
+        $data -> nik = $request -> nik;
+        $data -> no_hp = $request -> no_hp;
+        $data ->save();
+        return redirect('pemilik');
     }
 
     /**
@@ -43,7 +52,9 @@ class pemilikController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = pemilik::where('id_pemilik', '=', $id)->get();
+        return view('pemilik.editPemilik', compact('data','id'));
+
     }
 
     /**
@@ -51,7 +62,15 @@ class pemilikController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = pemilik::where('id_pemilik', '=',$id);
+        $data->update([
+         'nama_pemilik'=>$request->nama_pemilik,
+         'tgl_lahir'=>$request->tgl_lahir,
+         'alamat'=>$request->alamat,
+         'nik'=>$request->nik,
+         'no_hp'=>$request->no_hp,        
+        ]);
+        return redirect('pemilik');
     }
 
     /**
@@ -59,6 +78,8 @@ class pemilikController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = pemilik::where('id_pemilik','=', $id);
+        $data->delete();
+        return redirect('pemilik');
     }
 }

@@ -14,11 +14,11 @@
             <div class="container-fluid">
                 <!--begin::Row-->
                 <div class="row">
-                    <div class="col-sm-6"><h3 class="mb-0">Mekanik</h3></div>
+                    <div class="col-sm-6"><h3 class="mb-0">Pemilik</h3></div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Mekanik</li>
+                            <li class="breadcrumb-item active" aria-current="page">Pemilik</li>
                         </ol>
                     </div>
                 </div>
@@ -36,10 +36,10 @@
                             <div class="card-header">
                                 <div class="row">
                                     <div class="col-11">
-                                        <h3 class="card-title">Data Mekanik</h3>
+                                        <h3 class="card-title">Data Pemilik</h3>
                                     </div>
                                     <div class="col-1 d-flex justify-content-end">
-                                        <a href="{{ route('mekanik.create') }}" class="btn btn-success btn-sm">Add</a>
+                                        <a href="{{ route('pemilik.create') }}" class="btn btn-success btn-sm">Add</a>
                                     </div>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Mekanik</th>
+                                            <th>Nama Pemilik</th>
                                             <th>Tanggal lahir</th>
                                             <th>Alamat</th>
                                             <th>NIK</th>
@@ -60,15 +60,15 @@
                                         @foreach($data as $row)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $row->nama_mekanik }}</td>
+                                                <td>{{ $row->nama_pemilik }}</td>
                                                 <td>{{ $row->tgl_lahir }}</td>
                                                 <td>{{ $row->alamat }}</td>
                                                 <td>{{ $row->nik }}</td>
                                                 <td>{{ $row->no_hp }}</td>
                                                 <td>
-                                                    <a href="{{ route('mekanik.edit', $row->id_mekanik) }}" class="btn btn-warning">Edit</a>  
+                                                    <a href="{{ route('pemilik.edit', $row->id_pemilik) }}" class="btn btn-warning">Edit</a>  
                                                     <span class="separator"></span>
-                                                    <a href="{{ route('mekanik.delete', $row->id_mekanik) }}" class="btn btn-danger">Delete</a>
+                                                    <a href="{{ route('pemilik.delete', $row->id_pemilik) }}" class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>
                                         @endforeach
