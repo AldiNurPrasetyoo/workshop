@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\detail_serviceController;
 use App\Http\Controllers\jenis_kendaraanController;
+use App\Http\Controllers\jenis_serviceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +33,11 @@ Route::post('/jenis-kendaraan/add',[jenis_kendaraanController::class,'store'])->
 Route::get('/jenis-kendaraan/edit/{id}',[jenis_kendaraanController::class,'edit'])->name('jenis-kendaraan.edit');
 Route::post('/jenis-kendaraan/edit/{id}',[jenis_kendaraanController::class,'update'])->name('jenis-kendaraan.update');
 Route::get('/jenis-kendaraan/delete/{id}',[jenis_kendaraanController::class,'destroy'])->name('jenis-kendaraan.delete');
+
+
+Route::get('/jenis-service',[jenis_serviceController::class,'index'])->name('jenis-service.index');
+Route::get('/jenis-service/add',[jenis_serviceController::class,'create'])->name('jenis-service.create');
+Route::post('/jenis-service/add',[jenis_serviceController::class,'store'])->name('jenis-service.store');
+Route::get('/jenis-service/edit/{id}',[jenis_serviceController::class,'edit'])->name('jenis-service.edit');
+Route::post('/jenis-service/edit/{id}',[jenis_serviceController::class,'update'])->name('jenis-service.update');
+Route::get('/jenis-service/delete/{id}',[jenis_serviceController::class,'destroy'])->name('jenis-service.delete');

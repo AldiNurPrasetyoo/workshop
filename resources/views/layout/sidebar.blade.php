@@ -49,6 +49,12 @@
                     </a>
                   </li>
                   <li class="nav-item">
+                    <a href="./service" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Service</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
                     <a href="./jenis-service" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Jenis Service</p>
@@ -61,9 +67,15 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="./index2.html" class="nav-link">
+                    <a href="./mekanik" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Kendaraan</p>
+                      <p>Mekanik</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="./pemilik" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Pemilik</p>
                     </a>
                   </li>
                 </ul>
