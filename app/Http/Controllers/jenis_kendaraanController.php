@@ -32,7 +32,7 @@ class jenis_kendaraanController extends Controller
     {
          $data = new jenis_kendaraan();
          $data->nama_jenis_kendaraan = $request->nama_jenis_kendaraan;
-         $post = $data->save();
+         $data->save();
          return redirect('jenis-kendaraan');
     }
 

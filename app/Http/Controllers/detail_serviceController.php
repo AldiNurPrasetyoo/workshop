@@ -34,7 +34,7 @@ class detail_serviceController extends Controller
          $data = new detail_service();
          $data->sparepart = $request->sparepart;
          $data->harga = $request->harga;
-         $post = $data->save();
+         $data->save();
          return redirect('detail-service');
     }
 

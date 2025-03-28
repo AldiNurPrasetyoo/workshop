@@ -12,6 +12,7 @@ class mekanik extends Model
     protected $table = 'mekanik';
 
     protected $fillable =[
+        'id_mekanik',
         'nama_mekanik',
         'tgl_lahir',
         'alamat',

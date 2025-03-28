@@ -30,10 +30,10 @@ class jenis_serviceController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new jenis_service();
+         $data = new jenis_service();
          $data->jenis_service = $request->jenis_service;
          $data->keterangan = $request->keterangan;
-         $post = $data->save();
+         $data->save();
          return redirect('jenis-service');
     }
 
