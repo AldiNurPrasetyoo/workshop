@@ -14,13 +14,10 @@ class detail_service extends Model
 
     protected $fillable = [
         'id_detail_service',
-        'id_service',
         'sparepart',
         'harga',
     ];
 
-    public function service():BelongsTo{
-        return $this->belongsTo(service::class);
-    }
+    
 
 }

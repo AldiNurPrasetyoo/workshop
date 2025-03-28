@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('detail_service', function (Blueprint $table) {
             $table->increments('id_detail_service');
-            $table->unsignedInteger('id_service');
-            $table->foreign('id_service')->references('id_service')->on('service');
             $table->string('sparepart',50);
             $table->integer('harga')->unsigned(7);
             $table->timestamps();
