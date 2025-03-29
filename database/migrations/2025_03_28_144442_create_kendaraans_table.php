@@ -13,10 +13,6 @@ return new class extends Migration
     {
         Schema::create('kendaraan', function (Blueprint $table) {
             $table->increments('id_kendaraan');
-            $table->unsignedInteger('id_jenis_kendaraan');
-            $table->foreign('id_jenis_kendaraan')->references('id_jenis_kendaraan')->on('jenis_kendaraan');
-            $table->unsignedInteger('id_pemilik');
-            $table->foreign('id_pemilik')->references('id_pemilik')->on('pemilik');
             $table->string('no_pol',10);
             $table->string('tahun_kendaraan',4);
             $table->string('no_mesin')->unique(12);

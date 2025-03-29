@@ -13,8 +13,6 @@ class kendaraan extends Model
 
     protected $fillable =[
         'id_kendaraan',
-        'id_jenis_kendaraan',
-        'id_pemilik',
         'no_pol',
         'tahun_kendaraan',
         'no_mesin',

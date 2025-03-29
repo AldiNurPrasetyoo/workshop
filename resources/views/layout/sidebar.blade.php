@@ -43,7 +43,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="./index2.html" class="nav-link">
+                    <a href="./kendaraan" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Kendaraan</p>
                     </a>

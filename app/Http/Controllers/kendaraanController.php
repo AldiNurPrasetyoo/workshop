@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kendaraan;
 use Illuminate\Http\Request;
 
 class kendaraanController extends Controller
@@ -11,7 +12,9 @@ class kendaraanController extends Controller
      */
     public function index()
     {
-        //
+        $data = kendaraan::get();
+        //dd($data);
+        return view('kendaraan.tampilKendaraan', compact('data'));
     }
 
     /**
@@ -19,7 +22,8 @@ class kendaraanController extends Controller
      */
     public function create()
     {
-        //
+        return view('kendaraan.tambahKendaraan');
+
     }
 
     /**
@@ -27,7 +31,15 @@ class kendaraanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $data = new kendaraan();
+         $data->no_pol = $request->no_pol;
+         $data->tahun_kendaraan = $request->tahun_kendaraan;
+         $data->no_mesin = $request->no_mesin;
+         $data->no_rangka = $request->no_rangka;
+         $data->kapasitas_mesin = $request->kapasitas_mesin;
+         $data->transmisi = $request->transmisi;
+         $data->save();
+         return redirect('kendaraan');
     }
 
     /**
@@ -43,7 +55,8 @@ class kendaraanController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = kendaraan::where('id_kendaraan', '=', $id)->get();
+        return view('kendaraan.editKendaraan', compact('data','id'));
     }
 
     /**
@@ -51,7 +64,16 @@ class kendaraanController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = kendaraan::where('id_kendaraan', '=',$id);
+        $data->update([
+            'no_pol'=>$request->no_pol,
+            'tahun_kendaraan'=>$request->tahun_kendaraan,
+            'no_mesin'=>$request->no_mesin,
+            'no_rangka'=>$request->no_rangka,
+            'kapasitas_mesin'=>$request->kapasitas_mesin,
+            'transmisi'=>$request->transmisi,
+        ]);
+        return redirect('kendaraan');
     }
 
     /**
@@ -59,6 +81,8 @@ class kendaraanController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = kendaraan::where('id_kendaraan','=', $id);
+        $data->delete();
+        return redirect('kendaraan');
     }
 }

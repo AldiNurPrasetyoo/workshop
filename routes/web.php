@@ -3,6 +3,7 @@
 use App\Http\Controllers\detail_serviceController;
 use App\Http\Controllers\jenis_kendaraanController;
 use App\Http\Controllers\jenis_serviceController;
+use App\Http\Controllers\kendaraanController;
 use App\Http\Controllers\mekanikController;
 use App\Http\Controllers\pemilikController;
 use Illuminate\Support\Facades\Route;
@@ -57,3 +58,10 @@ Route::post('/pemilik/add',[pemilikController::class,'store'])->name('pemilik.st
 Route::get('/pemilik/edit/{id}',[pemilikController::class,'edit'])->name('pemilik.edit');
 Route::post('/pemilik/edit/{id}',[pemilikController::class,'update'])->name('pemilik.update');
 Route::get('/pemilik/delete/{id}',[pemilikController::class,'destroy'])->name('pemilik.delete');
+
+Route::get('/kendaraan',[kendaraanController::class,'index'])->name('kendaraan.index');
+Route::get('/kendaraan/add',[kendaraanController::class,'create'])->name('kendaraan.create');
+Route::post('/kendaraan/add',[kendaraanController::class,'store'])->name('kendaraan.store');
+Route::get('/kendaraan/edit/{id}',[kendaraanController::class,'edit'])->name('kendaraan.edit');
+Route::post('/kendaraan/edit/{id}',[kendaraanController::class,'update'])->name('kendaraan.update');
+Route::get('/kendaraan/delete/{id}',[kendaraanController::class,'destroy'])->name('kendaraan.delete');
