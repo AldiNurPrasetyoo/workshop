@@ -39,7 +39,7 @@
                                         <h3 class="card-title">Data Mekanik</h3>
                                     </div>
                                     <div class="col-1 d-flex justify-content-end">
-                                        <a href="{{ route('mekanik.create') }}" class="btn btn-success btn-sm">Add</a>
+                                        <a href="{{ route('mekanik.create') }}" class="btn btn-success btn-sm">Tambah</a>
                                     </div>
                                 </div>
                             </div>

@@ -19,7 +19,7 @@
                         <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Kendaraan</li>
-                            <li class="breadcrumb-item active" aria-current="page">Add</li>
+                            <li class="breadcrumb-item active" aria-current="page">Tambah</li>
                         </ol>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                                             <input type="text" class="form-control" name="no_pol"
                                                 placeholder="Masukkan Nomor Polisi" required
                                             />
-                                            <div class="invalid-feedback">Masukkan No Polisi anda terlebih dahulu !!!</div>
+                                            <div class="invalid-feedback">Masukkan No Polisi terlebih dahulu !!!</div>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">Tahun Kendaraan</label>
@@ -71,7 +71,7 @@
                                             <input type="text" class="form-control" name="no_rangka"
                                                 placeholder="Masukkan Nomor Rangka" required
                                             />
-                                            <div class="invalid-feedback">Masukkan No Rangka Kendaraan anda terlebih dahulu !!!</div>
+                                            <div class="invalid-feedback">Masukkan No Rangka Kendaraan terlebih dahulu !!!</div>
                                         </div>
                                         <div class="col-md-6">
                                             <label for="pilihCC" class="form-label">Kapasitas Mesin</label>

@@ -14,11 +14,11 @@
             <div class="container-fluid">
                 <!--begin::Row-->
                 <div class="row">
-                    <div class="col-sm-6"><h3 class="mb-0">Jenis Service</h3></div>
+                    <div class="col-sm-6"><h3 class="mb-0">Service</h3></div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Jenis Service</li>
+                            <li class="breadcrumb-item active" aria-current="page">Service</li>
                             <li class="breadcrumb-item active" aria-current="page">Edit</li>
                         </ol>
                     </div>
@@ -36,26 +36,32 @@
                         <div class="card card-primary card-outline mb-4">
                             <!--begin::Header-->
                             <div class="card-header">
-                                <div class="card-title">Edit Jenis Service</div>
+                                <div class="card-title">Edit Data Service</div>
                             </div>
                             <!--end::Header-->
                             <!--begin::Form-->
                             @foreach($data as $row)
-                                <form action="{{ route('jenis-service.update', $id) }}" method="post">
+                                <form action="{{ route('service.update', $id) }}" method="post">
                                     <!--begin::Body-->
                                     @csrf
                                     <div class="card-body">
                                         <div class="row g-3">
                                             <div class="col-md-6">
-                                                <label class="form-label">Jenis Service</label>
-                                                <input type="text" class="form-control" name="jenis_service"
-                                                    value="{{ $row->jenis_service }}" 
+                                                <label class="form-label">Keluhan</label>
+                                                <input type="text" class="form-control" name="keluhan"
+                                                    value="{{ $row->keluhan }}" 
                                                 />
                                             </div>
                                             <div class="col-md-6">
-                                                <label class="form-label">Keterangan</label>
-                                                <input type="text" class="form-control" name="keterangan"
-                                                    value="{{ $row->keterangan }}" 
+                                                <label class="form-label">Tanggal Masuk</label>
+                                                <input type="text" class="form-control" name="tgl_masuk"
+                                                    value="{{ $row->tgl_masuk }}" 
+                                                />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Tanggal Keluar</label>
+                                                <input type="text" class="form-control" name="tgl_keluar"
+                                                    value="{{ $row->tgl_keluar }}" 
                                                 />
                                             </div>
                                         </div>                                        

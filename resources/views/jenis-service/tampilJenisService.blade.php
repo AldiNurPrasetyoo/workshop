@@ -39,7 +39,7 @@
                                         <h3 class="card-title">Data Jenis Service</h3>
                                     </div>
                                     <div class="col-1 d-flex justify-content-end">
-                                        <a href="{{ route('jenis-service.create') }}" class="btn btn-success btn-sm">Add</a>
+                                        <a href="{{ route('jenis-service.create') }}" class="btn btn-success btn-sm">Tambah</a>
                                     </div>
                                 </div>
                             </div>

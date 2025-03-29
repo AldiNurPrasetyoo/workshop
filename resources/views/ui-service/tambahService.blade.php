@@ -14,11 +14,11 @@
             <div class="container-fluid">
                 <!--begin::Row-->
                 <div class="row">
-                    <div class="col-sm-6"><h3 class="mb-0">Jenis Service</h3></div>
+                    <div class="col-sm-6"><h3 class="mb-0">Service</h3></div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Jenis Service</li>
+                            <li class="breadcrumb-item active" aria-current="page">Service</li>
                             <li class="breadcrumb-item active" aria-current="page">Tambah</li>
                         </ol>
                     </div>
@@ -40,21 +40,27 @@
                             </div>
                             <!--end::Header-->
                             <!--begin::Form-->
-                            <form action="{{ route('jenis-service.store') }}" method="post">
+                            <form action="{{ route('service.store') }}" method="post">
                                 <!--begin::Body-->
                                 @csrf
                                 <div class="card-body">
                                     <div class="row g-3">
                                         <div class="col-md-6">
-                                            <label class="form-label">Jenis Service</label>
-                                            <input type="text" class="form-control" name="jenis_service"
-                                                placeholder="Masukkan Jenis Service"
+                                            <label class="form-label">Keluhan</label>
+                                            <input type="text" class="form-control" name="keluhan"
+                                                placeholder="Masukkan Keluhan pada Kendaraan"
                                             />
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="form-label">Keterangan</label>
-                                            <input type="text" class="form-control" name="keterangan"
-                                                placeholder="Masukkan Keterangan"
+                                            <label class="form-label">Tanggal Masuk</label>
+                                            <input type="text" class="form-control" name="tgl_masuk"
+                                                placeholder="Masukkan Tanggal Masuk"
+                                            />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Tanggal Keluar</label>
+                                            <input type="text" class="form-control" name="tgl_keluar"
+                                                placeholder="Masukkan Tanggal Keluar"
                                             />
                                         </div>
                                     </div>

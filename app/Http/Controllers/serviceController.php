@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\service;
 use Illuminate\Http\Request;
 
 class serviceController extends Controller
@@ -11,7 +12,9 @@ class serviceController extends Controller
      */
     public function index()
     {
-        //
+        $data = service::get();
+        //dd($data);
+        return view('ui-service.tampilService', compact('data'));
     }
 
     /**
@@ -19,7 +22,8 @@ class serviceController extends Controller
      */
     public function create()
     {
-        //
+        return view('ui-service.tambahService');
+
     }
 
     /**
@@ -27,7 +31,13 @@ class serviceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $data = new service();
+         $data->keluhan = $request->keluhan;
+         $data->tgl_masuk = $request->tgl_masuk;
+         $data->tgl_keluar = $request->tgl_keluar;
+         $data->save();
+         return redirect('service');
+
     }
 
     /**
@@ -43,7 +53,8 @@ class serviceController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = service::where('id_service', '=', $id)->get();
+        return view('ui-service.editService', compact('data','id'));
     }
 
     /**
@@ -51,7 +62,13 @@ class serviceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = service::where('id_service', '=',$id);
+        $data->update([
+            'keluhan'=>$request->keluhan,
+            'tgl_masuk'=>$request->tgl_masuk,
+            'tgl_keluar'=>$request->tgl_keluar,
+        ]);
+        return redirect('service');
     }
 
     /**
@@ -59,6 +76,9 @@ class serviceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = service::where('id_service','=', $id);
+        $data->delete();
+        return redirect('service');
+
     }
 }

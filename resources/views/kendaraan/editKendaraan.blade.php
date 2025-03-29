@@ -51,7 +51,7 @@
                                                 <input type="text" class="form-control" name="no_pol"
                                                     value="{{ $row->no_pol }}" required
                                                 />
-                                                <div class="invalid-feedback">Masukkan No Polisi anda terlebih dahulu !!!</div>
+                                                <div class="invalid-feedback">Masukkan No Polisi terlebih dahulu !!!</div>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tahun Kendaraan</label>
@@ -65,14 +65,14 @@
                                                 <input type="text" class="form-control" name="no_mesin"
                                                     value="{{ $row->no_mesin }}" required
                                                 />
-                                                <div class="invalid-feedback">Masukkan No Mesin anda terlebih dahulu !!! ><</div>
+                                                <div class="invalid-feedback">Masukkan No Mesin terlebih dahulu !!! ><</div>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">No Rangka</label>
                                                 <input type="text" class="form-control" name="no_rangka"
                                                     value="{{ $row->no_rangka }}" required
                                                 />
-                                                <div class="invalid-feedback">Masukkan No Rangka Kendaraan anda terlebih dahulu !!!</div>
+                                                <div class="invalid-feedback">Masukkan No Rangka Kendaraan terlebih dahulu !!!</div>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="pilihCC" class="form-label">Kapasitas Mesin</label>
@@ -82,7 +82,7 @@
                                                         <option value="{{ $cc }}" {{ old('kapasitas_mesin', $row->kapasitas_mesin) == $cc ? 'selected' : '' }}>{{ $cc }}</option>
                                                     @endforeach
                                                 </select>
-                                                <div class="invalid-feedback">Pilih Kapasitas Mesin anda terlebih dahulu !!!</div>
+                                                <div class="invalid-feedback">Pilih Kapasitas Mesin terlebih dahulu !!!</div>
                                             </div>
                                             <div class="col-md-6">
                                                 <fieldset class="row mb-3 w-100">

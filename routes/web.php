@@ -6,6 +6,7 @@ use App\Http\Controllers\jenis_serviceController;
 use App\Http\Controllers\kendaraanController;
 use App\Http\Controllers\mekanikController;
 use App\Http\Controllers\pemilikController;
+use App\Http\Controllers\serviceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,13 @@ Route::post('/jenis-service/add',[jenis_serviceController::class,'store'])->name
 Route::get('/jenis-service/edit/{id}',[jenis_serviceController::class,'edit'])->name('jenis-service.edit');
 Route::post('/jenis-service/edit/{id}',[jenis_serviceController::class,'update'])->name('jenis-service.update');
 Route::get('/jenis-service/delete/{id}',[jenis_serviceController::class,'destroy'])->name('jenis-service.delete');
+
+Route::get('/service',[serviceController::class,'index'])->name('service.index');
+Route::get('/service/add',[serviceController::class,'create'])->name('service.create');
+Route::post('/service/add',[serviceController::class,'store'])->name('service.store');
+Route::get('/service/edit/{id}',[serviceController::class,'edit'])->name('service.edit');
+Route::post('/service/edit/{id}',[serviceController::class,'update'])->name('service.update');
+Route::get('/service/delete/{id}',[serviceController::class,'destroy'])->name('service.delete');
 
 Route::get('/mekanik',[mekanikController::class,'index'])->name('mekanik.index');
 Route::get('/mekanik/add',[mekanikController::class,'create'])->name('mekanik.create');

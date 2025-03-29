@@ -19,7 +19,7 @@
                         <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Mekanik</li>
-                            <li class="breadcrumb-item active" aria-current="page">Add</li>
+                            <li class="breadcrumb-item active" aria-current="page">Tambah</li>
                         </ol>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                                             <input type="text" class="form-control" name="nama_mekanik"
                                                 placeholder="Masukkan Nama Mekanik" required
                                             />
-                                            <div class="invalid-feedback">Masukkin Nama Mekanik!!!</div>
+                                            <div class="invalid-feedback">Masukkan Nama Mekanik!!!</div>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">Tanggal lahir</label>
@@ -64,7 +64,7 @@
                                             <input type="text" class="form-control" name="alamat"
                                                 placeholder="Masukkan Alamat" required
                                             />
-                                            <div class="invalid-feedback">Masukkan Alamat!!! ><</div>
+                                            <div class="invalid-feedback">Masukkan Alamat!!! </div>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">NIK</label>
