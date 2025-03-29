@@ -13,8 +13,7 @@ class service extends Model
     protected $table = 'service';
 
     protected $fillable =[
-        'id_kendaraan',
-        'id_jenis_service',
+        'id_service',
         'keluhan',
         'tgl_masuk',
         'tgl_keluar',
