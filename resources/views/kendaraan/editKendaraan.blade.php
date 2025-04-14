@@ -36,7 +36,7 @@
                         <div class="card card-primary card-outline mb-4">
                             <!--begin::Header-->
                             <div class="card-header">
-                                <div class="card-title">Edit Jenis Kendaraan</div>
+                                <div class="card-title">Edit Data Kendaraan</div>
                             </div>
                             <!--end::Header-->
                             <!--begin::Form-->
@@ -121,7 +121,7 @@
                                     <!--end::Body-->
                                     <!--begin::Footer-->
                                     <div class="card-footer">
-                                        <button type="submit" class="btn btn-primary">Save</button>
+                                        <button type="submit" class="btn btn-primary">Simpan</button>
                                     </div>
                                     <!--end::Footer-->
                                     <!--start::Script Validation-->

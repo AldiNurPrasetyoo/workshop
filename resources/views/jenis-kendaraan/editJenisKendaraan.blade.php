@@ -14,11 +14,11 @@
             <div class="container-fluid">
                 <!--begin::Row-->
                 <div class="row">
-                    <div class="col-sm-6"><h3 class="mb-0">Jenis kendaraan</h3></div>
+                    <div class="col-sm-6"><h3 class="mb-0">Jenis Kendaraan</h3></div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Jenis Kendaraan</li>
+                            <li class="breadcrumb-item active" aria-current="page">Kendaraan</li>
                             <li class="breadcrumb-item active" aria-current="page">Edit</li>
                         </ol>
                     </div>
@@ -41,15 +41,18 @@
                             <!--end::Header-->
                             <!--begin::Form-->
                             @foreach($data as $row)
-                                <form action="{{ route('jenis-kendaraan.update', $id) }}" method="post">
+                                <form class="needs-validation" action="{{ route('jenis-kendaraan.update', $id) }}" method="post" novalidate>
                                     <!--begin::Body-->
                                     @csrf
                                     <div class="card-body">
-                                        <div class="mb-3">
-                                            <label class="form-label">Nama Jenis Kendaraan</label>
-                                            <input type="text" class="form-control" name="nama_jenis_kendaraan"
-                                                value="{{ $row->nama_jenis_kendaraan }}" 
-                                            />
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Jenis Kendaraan</label>
+                                                <input type="text" class="form-control" name="nama_jenis_kendaraan"
+                                                    value="{{ $row->nama_jenis_kendaraan }}" required
+                                                />
+                                                <div class="invalid-feedback">Masukkan Jenis Kendaraan !!!</div>
+                                            </div>
                                         </div>
                                     </div>
                                     <!--end::Body-->
@@ -58,6 +61,33 @@
                                         <button type="submit" class="btn btn-primary">Simpan</button>
                                     </div>
                                     <!--end::Footer-->
+                                    <!--start::Script Validation-->
+                                    <script>
+                                        // Example starter JavaScript for disabling form submissions if there are invalid fields
+                                        (() => {
+                                            'use strict';
+
+                                            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                            const forms = document.querySelectorAll('.needs-validation');
+
+                                            // Loop over them and prevent submission
+                                            Array.from(forms).forEach((form) => {
+                                                form.addEventListener(
+                                                    'submit',
+                                                    (event) => {
+                                                        if (!form.checkValidity()) {
+                                                            event.preventDefault();
+                                                            event.stopPropagation();
+                                                        }
+
+                                                        form.classList.add('was-validated');
+                                                    },
+                                                    false,
+                                                );
+                                            });
+                                        })();
+                                    </script>
+                                    <!--end::Script Validation-->
                                 </form>
                                 <!--end::Form-->
                             @endforeach

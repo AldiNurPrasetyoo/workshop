@@ -14,7 +14,7 @@
             <div class="container-fluid">
                 <!--begin::Row-->
                 <div class="row">
-                    <div class="col-sm-6"><h3 class="mb-0">Detail Service</h3></div>
+                    <div class="col-sm-6"><h3 class="mb-0">Edit Detail Service</h3></div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -36,12 +36,12 @@
                         <div class="card card-primary card-outline mb-4">
                             <!--begin::Header-->
                             <div class="card-header">
-                                <div class="card-title">Edit Detail Services</div>
+                                <div class="card-title">Edit Data Detail Service</div>
                             </div>
                             <!--end::Header-->
                             <!--begin::Form-->
                             @foreach($data as $row)
-                                <form action="{{ route('detail-service.update', $id) }}" method="post">
+                                <form class="needs-validation" action="{{ route('detail-service.update', $id) }}" method="post" novalidate>
                                     <!--begin::Body-->
                                     @csrf
                                     <div class="card-body">
@@ -49,16 +49,19 @@
                                             <div class="col-md-6">
                                                 <label class="form-label">Sparepart</label>
                                                 <input type="text" class="form-control" name="sparepart"
-                                                    value="{{ $row->sparepart }}" 
+                                                    value="{{ $row->sparepart }}" required
                                                 />
+                                                <div class="invalid-feedback">Masukkan Sparepart !!!</div>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Harga</label>
                                                 <input type="text" class="form-control" name="harga"
-                                                    value="{{ $row->harga }}" 
+                                                    value="{{ $row->harga }}" required
                                                 />
+                                                <div class="invalid-feedback">Masukkan Harga !!!</div>
                                             </div>
-                                        </div>                                        
+                                            </div>
+                                        </div>
                                     </div>
                                     <!--end::Body-->
                                     <!--begin::Footer-->
@@ -66,6 +69,33 @@
                                         <button type="submit" class="btn btn-primary">Simpan</button>
                                     </div>
                                     <!--end::Footer-->
+                                    <!--start::Script Validation-->
+                                    <script>
+                                        // Example starter JavaScript for disabling form submissions if there are invalid fields
+                                        (() => {
+                                            'use strict';
+
+                                            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                            const forms = document.querySelectorAll('.needs-validation');
+
+                                            // Loop over them and prevent submission
+                                            Array.from(forms).forEach((form) => {
+                                                form.addEventListener(
+                                                    'submit',
+                                                    (event) => {
+                                                        if (!form.checkValidity()) {
+                                                            event.preventDefault();
+                                                            event.stopPropagation();
+                                                        }
+
+                                                        form.classList.add('was-validated');
+                                                    },
+                                                    false,
+                                                );
+                                            });
+                                        })();
+                                    </script>
+                                    <!--end::Script Validation-->
                                 </form>
                                 <!--end::Form-->
                             @endforeach

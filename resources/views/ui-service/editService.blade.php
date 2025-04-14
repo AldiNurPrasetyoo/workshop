@@ -41,7 +41,7 @@
                             <!--end::Header-->
                             <!--begin::Form-->
                             @foreach($data as $row)
-                                <form action="{{ route('service.update', $id) }}" method="post">
+                                <form class="needs-validation" action="{{ route('service.update', $id) }}" method="post" novalidate>
                                     <!--begin::Body-->
                                     @csrf
                                     <div class="card-body">
@@ -49,22 +49,26 @@
                                             <div class="col-md-6">
                                                 <label class="form-label">Keluhan</label>
                                                 <input type="text" class="form-control" name="keluhan"
-                                                    value="{{ $row->keluhan }}" 
+                                                    value="{{ $row->keluhan }}" required
                                                 />
+                                                <div class="invalid-feedback">Masukkan Keluhan Kendaraan !!!</div>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Masuk</label>
                                                 <input type="text" class="form-control" name="tgl_masuk"
-                                                    value="{{ $row->tgl_masuk }}" 
+                                                    value="{{ $row->tgl_masuk }}" required
                                                 />
+                                                <div class="invalid-feedback">Masukkan Tanggal Masuk Kendaraan !!!</div>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Keluar</label>
                                                 <input type="text" class="form-control" name="tgl_keluar"
-                                                    value="{{ $row->tgl_keluar }}" 
+                                                    value="{{ $row->tgl_keluar }}" required
                                                 />
+                                                <div class="invalid-feedback">Masukkan Tanggal Keluar Kendaraan !!! ><</div>
                                             </div>
-                                        </div>                                        
+                                            </div>
+                                        </div>
                                     </div>
                                     <!--end::Body-->
                                     <!--begin::Footer-->
@@ -72,6 +76,33 @@
                                         <button type="submit" class="btn btn-primary">Simpan</button>
                                     </div>
                                     <!--end::Footer-->
+                                    <!--start::Script Validation-->
+                                    <script>
+                                        // Example starter JavaScript for disabling form submissions if there are invalid fields
+                                        (() => {
+                                            'use strict';
+
+                                            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                            const forms = document.querySelectorAll('.needs-validation');
+
+                                            // Loop over them and prevent submission
+                                            Array.from(forms).forEach((form) => {
+                                                form.addEventListener(
+                                                    'submit',
+                                                    (event) => {
+                                                        if (!form.checkValidity()) {
+                                                            event.preventDefault();
+                                                            event.stopPropagation();
+                                                        }
+
+                                                        form.classList.add('was-validated');
+                                                    },
+                                                    false,
+                                                );
+                                            });
+                                        })();
+                                    </script>
+                                    <!--end::Script Validation-->
                                 </form>
                                 <!--end::Form-->
                             @endforeach

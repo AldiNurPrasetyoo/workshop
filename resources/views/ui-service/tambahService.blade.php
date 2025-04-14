@@ -36,11 +36,11 @@
                         <div class="card card-primary card-outline mb-4">
                             <!--begin::Header-->
                             <div class="card-header">
-                                <div class="card-title">Masukkan Data !!!</div>
+                                <div class="card-title">Masukkan Data Service</div>
                             </div>
                             <!--end::Header-->
                             <!--begin::Form-->
-                            <form action="{{ route('service.store') }}" method="post">
+                            <form class="needs-validation" action="{{ route('service.store') }}" method="post" novalidate>
                                 <!--begin::Body-->
                                 @csrf
                                 <div class="card-body">
@@ -48,20 +48,24 @@
                                         <div class="col-md-6">
                                             <label class="form-label">Keluhan</label>
                                             <input type="text" class="form-control" name="keluhan"
-                                                placeholder="Masukkan Keluhan pada Kendaraan"
+                                                placeholder="Masukkan Keluhan Kendaraan" required
                                             />
+                                            <div class="invalid-feedback">Masukkan Keluhan Kendaraan !!!</div>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">Tanggal Masuk</label>
                                             <input type="text" class="form-control" name="tgl_masuk"
-                                                placeholder="Masukkan Tanggal Masuk"
+                                                placeholder="Masukkan Tanggal Masuk Kendaraan" required
                                             />
+                                            <div class="invalid-feedback">Masukkan Tanggal Masuk Kendaraan terlebih dahulu !!!</div>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">Tanggal Keluar</label>
                                             <input type="text" class="form-control" name="tgl_keluar"
-                                                placeholder="Masukkan Tanggal Keluar"
+                                                placeholder="Masukkan Tanggal Keluar Kendaraan" required
                                             />
+                                            <div class="invalid-feedback">Masukkan Tanggal Kendaraan Kendaraan terlebih dahulu !!!</div>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
@@ -73,6 +77,33 @@
                                 <!--end::Footer-->
                             </form>
                             <!--end::Form-->
+                            <!--start::Script Validation-->
+                            <script>
+                                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                                (() => {
+                                    'use strict';
+
+                                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                    const forms = document.querySelectorAll('.needs-validation');
+
+                                    // Loop over them and prevent submission
+                                    Array.from(forms).forEach((form) => {
+                                        form.addEventListener(
+                                            'submit',
+                                            (event) => {
+                                                if (!form.checkValidity()) {
+                                                    event.preventDefault();
+                                                    event.stopPropagation();
+                                                }
+
+                                                form.classList.add('was-validated');
+                                            },
+                                            false,
+                                        );
+                                    });
+                                })();
+                            </script>
+                            <!--end::Script Validation-->
                         </div>
                     </div>
                 </div>

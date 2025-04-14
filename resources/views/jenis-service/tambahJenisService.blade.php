@@ -36,11 +36,11 @@
                         <div class="card card-primary card-outline mb-4">
                             <!--begin::Header-->
                             <div class="card-header">
-                                <div class="card-title">Masukkan Data !!!</div>
+                                <div class="card-title">Data Jenis Service</div>
                             </div>
                             <!--end::Header-->
                             <!--begin::Form-->
-                            <form action="{{ route('jenis-service.store') }}" method="post">
+                            <form class="needs-validation" action="{{ route('jenis-service.store') }}" method="post" novalidate>
                                 <!--begin::Body-->
                                 @csrf
                                 <div class="card-body">
@@ -48,14 +48,17 @@
                                         <div class="col-md-6">
                                             <label class="form-label">Jenis Service</label>
                                             <input type="text" class="form-control" name="jenis_service"
-                                                placeholder="Masukkan Jenis Service"
+                                                placeholder="Masukkan Jenis Service" required
                                             />
+                                            <div class="invalid-feedback">Masukkan Jenis Service !!!</div>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">Keterangan</label>
                                             <input type="text" class="form-control" name="keterangan"
-                                                placeholder="Masukkan Keterangan"
+                                                placeholder="Masukkan Keterangan" required
                                             />
+                                            <div class="invalid-feedback">Masukkan Keterangan !!!</div>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
@@ -67,6 +70,33 @@
                                 <!--end::Footer-->
                             </form>
                             <!--end::Form-->
+                            <!--start::Script Validation-->
+                            <script>
+                                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                                (() => {
+                                    'use strict';
+
+                                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                    const forms = document.querySelectorAll('.needs-validation');
+
+                                    // Loop over them and prevent submission
+                                    Array.from(forms).forEach((form) => {
+                                        form.addEventListener(
+                                            'submit',
+                                            (event) => {
+                                                if (!form.checkValidity()) {
+                                                    event.preventDefault();
+                                                    event.stopPropagation();
+                                                }
+
+                                                form.classList.add('was-validated');
+                                            },
+                                            false,
+                                        );
+                                    });
+                                })();
+                            </script>
+                            <!--end::Script Validation-->
                         </div>
                     </div>
                 </div>

@@ -57,7 +57,7 @@
                                             <input type="text" class="form-control" name="tahun_kendaraan"
                                                 placeholder="Masukkan Tahun Kendaraan" required
                                             />
-                                            <div class="invalid-feedback">Masukkan Tahun Kendaraan anda !!!</div>
+                                            <div class="invalid-feedback">Masukkan Tahun Kendaraan terlebih dahulu !!!</div>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">No Mesin</label>
@@ -104,7 +104,7 @@
                                                             required
                                                         />
                                                         <label class="form-check-label" for="manual">Manual</label>
-                                                        <div class="invalid-feedback position-absolute">Pilih terlebih dahulu !!!</div>
+                                                        <div class="invalid-feedback position-absolute">Pilih jenis transmisi !!!</div>
                                                     </div>
                                                     <div class="form-check">
                                                         <input
