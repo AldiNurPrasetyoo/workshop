@@ -1,4 +1,6 @@
 Aldi Nur Prasetyo (2222105003)
-Rafli Deden Januardi (2222105019)
-Ahmad Syahdan Kurniawan (2222105036)
-done semua pak
+Ardi Rohmana (2222105005)
+Atamma Manggala Putra (2222105007)
+Rasyid Ridho (2222105020)
+Adrian Maulana Ramadham (2222105028)
+Naufal (2222105161)
